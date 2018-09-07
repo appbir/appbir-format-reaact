@@ -1,7 +1,7 @@
 {
   "name": "appbir-format-react",
   "version": "1.0.0",
-  "description": "<h1>深入了解redux三方插件</h1>",
+  "description": "<h1>react工程模版</h1>",
   "main": "index.js",
   "scripts": {
     "dev": "webpack  --config  webpack.config.js -w --progress  --colors",
