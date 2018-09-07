@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appbir/appbir-deepcode-pugin-redux-middware.git"
+    "url": "git+https://github.com/appbir/appbir-format-react.git"
   },
   "keywords": [
     "appbir-format-react"
