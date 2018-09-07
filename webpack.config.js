@@ -5,8 +5,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-
-
 const config = {
     devtool: 'inline-source-map',
     entry: {
