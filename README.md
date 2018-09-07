@@ -18,5 +18,5 @@
    npm run dev
   ```
   
-  5 .浏览器访问(nginx)
+  5. 浏览器访问(nginx)
   
