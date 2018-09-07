@@ -6,17 +6,17 @@
   ```
   npm i appbir-format-react
   ```
-  1. 安装后复制node_modules目录下的 appbir-format-react工程到开发的目录
+  2. 安装后复制node_modules目录下的 appbir-format-react工程到开发的目录
   
-  1. 安装依赖
+  3. 安装依赖
   ```
     npm i
   ```
   
-  1. 运行开发模式
+  4. 运行开发模式
   ```
    npm run dev
   ```
   
-  1.浏览器访问(nginx)
+  5 .浏览器访问(nginx)
   
