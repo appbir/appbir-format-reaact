@@ -1,5 +1,5 @@
 {
-  "name": "appbir-deepcode-pugin-redux-middware",
+  "name": "appbir-format-react",
   "version": "1.0.0",
   "description": "<h1>深入了解redux三方插件</h1>",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/appbir/appbir-deepcode-pugin-redux-middware.git"
   },
   "keywords": [
-    "appbir-deepcode-pugin-redux-middware"
+    "appbir-format-react"
   ],
   "author": "appbir",
   "license": "ISC",
@@ -57,7 +57,7 @@
     "react-dom": "16.1.1"
   },
   "bugs": {
-    "url": "https://github.com/appbir/appbir-deepcode-pugin-redux-middware/issues"
+    "url": "https://github.com/appbir/appbir-format-react/issues"
   },
-  "homepage": "https://github.com/appbir/appbir-deepcode-pugin-redux-middware#readme"
+  "homepage": "https://github.com/appbir/appbir-format-react#readme"
 }
