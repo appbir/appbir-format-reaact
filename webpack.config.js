@@ -8,10 +8,18 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = {
     devtool: 'inline-source-map',
     entry: {
-        index:'./src/core/index.js',
+        // index:'./src/core/index.js',
+        // dva1:'./src/module/dvaDemo/dva/index.js',
+        // dva2:'./src/module/dvaDemo/dva2/index.js',
+        // redux1:'./src/module/reduxdemo/01reduxreplace/index.js',
+        // redux2:'./src/module/reduxdemo/02reduxreplace/index.js',
+        // reduxall:'./src/module/reduxdemo/03reduxcombine/main.js',
+        // reduxall:'./src/module/reduxdemo/04reduxcombine/main.js',
+        main:'./src/module/core/main.js',
         'c-react':['react','react-dom'],
         'c-redux':['redux']
     },
+    
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
@@ -85,7 +93,9 @@ const config = {
             {ignore: [],copyUnmodified: true,debug: 'debug'})
     ],
     resolve: {
-       
+        alias: {
+            "frame": path.resolve(__dirname, './src/module/core/frame.js'),
+        }
     }  
 };
 

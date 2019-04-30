@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.less';
+// import './index.less';
 class ReactBoilerplate extends React.Component {
     render() {
       return (<div className="welcome">
