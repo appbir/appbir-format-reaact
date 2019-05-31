@@ -4,7 +4,11 @@ import {Route as ReactDOMRoute} from 'react-router-dom';
 import {Route as ReactRoute,Switch as ReactSwitch} from 'react-router';
 import {connect} from 'react-redux';
 
-const Switch = connect(state=>({location: state.routerReducer.location}))(ReactSwitch);
+// const Switch = connect(state=>({location: state.routerReducer.location}))(ReactSwitch);
+
+const Switch = connect(state=>{
+  return {location: state.toJS().routerReducer.location}
+})(ReactSwitch);
 
 
 class Bundle extends Component {
@@ -27,7 +31,6 @@ class Bundle extends Component {
         mod: null
       })
       props.load().then(mod => {
-        console.log('----------------------------加载的模块',mod)
         this.setState({
           mod: mod.default ? mod.default : mod
         })
@@ -64,10 +67,10 @@ const Route = (props) => {
                     return state.auth ?
                     (<Bundle load={component}>            
                       {(Container) =>{
-                        console.log('Container--------------',Container)
+                        // console.log('Container--------------',Container)
                 
                       let node =(Container) ? React.cloneElement(<Container appbir="paramappbir"/>): '';
-                      console.log('cloneElement',node)
+                      // console.log('cloneElement',node)
                       // 根据react节点来处理事情
                       
                       return (Container) ? node:(<div>加载中...</div>);

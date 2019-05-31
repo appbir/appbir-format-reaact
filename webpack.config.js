@@ -94,7 +94,8 @@ const config = {
     ],
     resolve: {
         alias: {
-            "frame": path.resolve(__dirname, './src/module/core/frame.js'),
+            // "frame": path.resolve(__dirname, './src/module/core/frame.js'),
+            "frame": path.resolve(__dirname, './src/module/reduxdemo/06lifecycle/core/frame.js'),
         }
     }  
 };
