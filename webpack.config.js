@@ -85,7 +85,12 @@ const config = {
             {ignore: [],copyUnmodified: true,debug: 'debug'})
     ],
     resolve: {
-       
+        alias: {
+            "riil-request":path.resolve(__dirname, './src/common/riil-request/src/index.js'),
+            "riil-route": path.resolve(__dirname, './src/common/riil-route/src/index.js'),
+            "riil-router": path.resolve(__dirname, './src/common/riil-router/src/index.js'),
+            "riil-frame": path.resolve(__dirname, './src/common/riil-frame/src/index.js'),
+        }
     }  
 };
 

@@ -1,0 +1,88 @@
+{
+  "_from": "riil-route@^1.0.3",
+  "_id": "riil-route@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-PStx0/DWfIfaLtuLihxVSCfK2AWKfGTJyKGF5xjf5Z1uq20RHtA2M3xAWKfEbq+/xGyhihwhR8tTwTzt/PH4dg==",
+  "_location": "/riil-route",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "riil-route@^1.0.3",
+    "name": "riil-route",
+    "escapedName": "riil-route",
+    "rawSpec": "^1.0.3",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://47.104.171.226:8085/riil-route/-/riil-route-1.0.3.tgz",
+  "_shasum": "d2cbd84226b1172f58ef439cf0cb8135998232a8",
+  "_spec": "riil-route@^1.0.3",
+  "_where": "D:\\nginx-1.12.2\\html\\liebao",
+  "author": {
+    "name": "libo"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "route",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.8",
+    "enzyme": "^3.3.0",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.1.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "email": "libo@ruijie.com.cn",
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__jest__/__mocks__/fileMock.js",
+      ".*\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  },
+  "keywords": [
+    "riil",
+    "component",
+    "route"
+  ],
+  "license": "ISC",
+  "main": "src/",
+  "name": "riil-route",
+  "scripts": {
+    "build": "npm run dev-umd && npm run prod-umd && npm run dev-bundle && npm run prod-bundle",
+    "dev-bundle": "webpack --config  webpack.bundle.config.js  --progress --profile --colors",
+    "dev-umd": "webpack --config  webpack.umd.config.js --progress --profile --colors",
+    "prod-bundle": "webpack --config  webpack.bundle.config.js  --progress --profile --colors -p",
+    "prod-umd": "webpack --config  webpack.umd.config.js --progress --profile --colors -p",
+    "test": "jest --coverage --verbose",
+    "test-init": "jest -u --coverage --verbose"
+  },
+  "version": "1.0.3"
+}

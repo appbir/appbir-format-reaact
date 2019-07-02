@@ -61,6 +61,7 @@
   },
   "homepage": "https://github.com/appbir/appbir-format-react#readme",
   "dependencies": {
+    "appbir-layout": "^2.0.0",
     "less": "3.9.0"
   }
 }
