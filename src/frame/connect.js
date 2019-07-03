@@ -1,10 +1,14 @@
-/**
- * 平台统一规划处理
+/*********************************************************************************
+ *                                 框架统一使用redux
+ **********************************************************************************
+ * 1. 统一扩展
+ * 2. 统一URL参数和编码
  */
-import React, { Component, createElement } from 'react';
+import qs from 'qs';
+import React, { Component } from 'react';
 import {connect as reduxConnect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import qs from 'qs';
+
 
 // 正对组件的高阶方法统一处理
 // 处理state 默认获取地址为module模块下 第二个参数是整套系统的state
@@ -20,7 +24,8 @@ export let connect= (mapStateToProps, mapDispatchToProps, mergeProps) => {
 			let configDispatchToProps = mapDispatchToProps(dispatch,getState);
 			let newDispatchToProps={};
 			for (let key in configDispatchToProps) {  
-				newDispatchToProps[key] = key === 'dispatch' ? dispatch: bindActionCreators(configDispatchToProps[key],dispatch);
+				newDispatchToProps[key] = key === 'dispatch' ? dispatch: 
+				bindActionCreators(configDispatchToProps[key],dispatch);
 			}  
 			return ()=>(newDispatchToProps);
 		} : mapDispatchToProps;
@@ -35,7 +40,7 @@ export let connect= (mapStateToProps, mapDispatchToProps, mergeProps) => {
 				let param= qs.parse(search,{ ignoreQueryPrefix: true, plainObjects: true });
 				// TODO 后续采用 createElement 形式
 				// TODO 后续便于调试 处理displayName
-				return (<WrappedComponent param={param} location={location}  {...props} />);
+				return (<WrappedComponent query={param} location={location}  {...props} />);
 			}
 		}
 		return  reduxConnect(getMapStateToProps, getMapDispatchToProps, mergeProps)(FrameConnect);

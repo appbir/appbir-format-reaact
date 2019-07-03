@@ -8,7 +8,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = {
     devtool: 'inline-source-map',
     entry: {
-        index:'./src/core/index.js',
+        index:'./src/main/main.js',
         'c-react':['react','react-dom'],
         'c-redux':['redux']
     },
