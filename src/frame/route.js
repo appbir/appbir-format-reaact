@@ -59,7 +59,7 @@ class AuthFilter extends Component {
   validatePermit = () => true;
   
   // 根据权限进行渲染组件是无权限页面
-  render=()=> this.state.isPermit ? <div>{this.props.children}</div> : <div>无权限</div>;
+  render=()=> this.state.isPermit ? this.props.children : <div>无权限</div>;
 }
 
 const Route = (props) => {

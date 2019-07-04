@@ -6,8 +6,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from './route';
 import Layout from './layout';
-import { createStore, ConnectedRouter, createHistory } from './redux';
-import { routerReducer} from 'react-router-redux';
+import {ConnectedRouter } from './redux';
 import { connect, Provider } from 'react-redux';
 
 /**
@@ -57,7 +56,7 @@ const createRoute=(routes=[],layoutCfg={})=>{
 	});
 	if(layoutRoutes.length ){
 		allRoutes.push(
-			<Layout config={layoutCfg.config} nodes = {layoutCfg.nodes}>
+			<Layout key={'layout_key'} config={layoutCfg.config} nodes = {layoutCfg.nodes}>
 				<Switch>
 					{layoutRoutes}
 				</Switch>
@@ -77,15 +76,13 @@ const RouteComponent = connect(state => ({ location: state.toJS().routerReducer.
 class Application extends Component {
 	constructor(props){
 		super(props);
-		this.history = createHistory();
-		this.store = createStore(history,{routerReducer,...props.reducer});
 	}
 	render() {
+		let {store,history,layout,router} = this.props;
 		return (
-			<Provider store={this.store}>
-				<ConnectedRouter history={this.history}>
-					<RouteComponent layout={this.props.layout} 
-						 router={this.props.router}/>
+			<Provider store={store}>
+				<ConnectedRouter history={history}>
+					<RouteComponent layout={layout} router={router}/>
 				</ConnectedRouter>
 			</Provider>
 		)

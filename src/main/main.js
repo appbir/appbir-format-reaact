@@ -1,29 +1,28 @@
 import React , {Component} from 'react';
-import  Frame from '../frame/frame';
+import  Frame from 'frame';
+import 'antd/dist/antd.min.css'
+import './main.less';
 
-const Header= ()=><div> header</div>
-
-class Left extends Component {
-    render= ()=> <div> left</div>
-}
+import Left from  '@/menu';
+import Header from  '@/setting';
 
 Frame.init({
 	//路由配置 URL地址--映射--文件  
 	// 提取到对应的文件
     router:{
 		routes:[
-				{path:'/', component:()=>import('../module/demo/index.jsx'),layout:false},
-				{path:'/demo2',component:()=>import('../module/demo2/index.jsx')},
-				{path:'/demo3',component:()=>import('../module/demo3/index.jsx')},
-				{exact:false, component:()=>import('../module/404/index.jsx')}
+				{path:'/', component:()=>import('../module/login'),layout:false},
+				{path:'/demo2',component:()=>import('../module/demo2')},
+				{path:'/demo3',component:()=>import('../module/demo3')},
+				{exact:false, component:()=>import('../module/404')}
 			   ],
 	}, 
 	// 站点布局
     layout:{
         nodes:[Header,Left],
         config:{
-			classNamePrefix:'r_',
-			targetName:'l_ref',
+			classNamePrefix:'appbir_',
+			targetName:'appbir_ref',
 			config:{
 				header:{visiabled:true,width:'',height:'54px',fixed: true,zIndex:20},
 				left:{visiabled:true,width:'68px',height:'FULL',fixed: true,zIndex:100},
@@ -35,3 +34,5 @@ Frame.init({
 		}
     }
 });
+
+console.log(Frame);

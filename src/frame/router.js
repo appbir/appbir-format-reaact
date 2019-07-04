@@ -16,9 +16,6 @@
 
 import * as router from 'react-router-redux';
 import qs from 'qs';
-import {recordMenu} from 'riil-utils'; 
-// 打断循环引用
-import {isRouteAuth} from '../../../riil-route/src/component/index.js'
 
 // 浅拷贝
 let assign = (target, source)=> {
@@ -31,10 +28,9 @@ let assign = (target, source)=> {
 let is=(source,type)=> typeof source === type;
 
 // 格式化queryString 
-export const formatUrl = (url,query) =>  {
+const formatUrl = (url,query) =>  {
   if(!url) return null;
   let splits = url.split('?');
-  let qs1 = qs;
   // deal URL query 
   let urlQuery = qs.parse(splits[1],{ ignoreQueryPrefix: true, plainObjects: true });
   // 通用ID传递处理
@@ -60,43 +56,32 @@ export const formatUrl = (url,query) =>  {
 * @return null
 */
 
+let redirect = (dispatch,url, query) => dispatch(router.push(formatUrl(url, query)));
 
-let redirect = (url, query,isRecord) =>{
-  isRecord && recordMenu(url); // 记录当前跳转菜单位置
-  window.store.dispatch(router.push(formatUrl(url, query)));
-}
 
-let replace = (url, query) => window.store.dispatch(router.replace(formatUrl(url, query)));
+let replace = (dispatch,url, query) => dispatch(router.replace(formatUrl(url, query)));
 
 // 回退
-let goBack = () => window.store.dispatch(router.goBack())
+let goBack = (dispatch) => window.store.dispatch(router.goBack())
 
 // 前进
-let goForward = () => {
-  window.store.dispatch(router.goForward())
-}
-
+let goForward = (dispatch) => dispatch(router.goForward())
 
 
 // 打开新的一页
-let open = (url,query,isRecord,isSameOrigin = true) => {
+let open = (dispatch,url,query,isSameOrigin = true) => {
   if(!url) return ;
-  let recordUrl = null;
   if(isSameOrigin){
     recordUrl = url;
-    if(!isRouteAuth(url)) return ;
     let origin = window.location.origin + window.location.pathname;
     url = origin + url;
   }
-  isRecord && recordUrl && recordMenu(recordUrl); // 记录当前跳转菜单位置
   url = formatUrl(url,query);
   window.open(url);
 }
 
 // 跳转指定记录
-let go = (step) => {
-    window.store.dispatch(router.go(step))
-}
+let go = (dispatch,step) => dispatch(router.go(step));
 
 export {
   redirect,
@@ -104,6 +89,6 @@ export {
   goBack,
   goForward,
   go,
-  open
+  open,
 }
 
