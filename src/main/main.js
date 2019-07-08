@@ -13,6 +13,7 @@ Frame.init({
 		routes:[
 				{path:'/', component:()=>import('../module/login'),layout:false},
 				{path:'/demo2',component:()=>import('../module/demo2')},
+				{path:'/index',component:()=>import('../module/index')},
 				{path:'/demo3',component:()=>import('../module/demo3')},
 				{exact:false, component:()=>import('../module/404')}
 			   ],
