@@ -11,7 +11,9 @@ import {render} from 'react-dom';
 import App from  './app.js'
 import { routerReducer} from 'react-router-redux';
 import { createStore, createHistory } from './redux';
-
+import systemReducer from './reducer';
+import * as Utils from './utils';
+import * as ToolComp from './tool'
 // import * as Config from './config';
 // import * as Route from '../common/route/src/component'
 // import * as Redux from './redux';
@@ -25,6 +27,7 @@ import * as Logger from './logger';
 const Frame = {
     Storage,
     Logger,
+    Utils,
     // Config, // 系统相关配置
     // Route,  // 路由元素相关
     // Redux,  // redux相关
@@ -98,11 +101,15 @@ const Frame = {
     Logger.frame('info','init frame');
     // init redux store 
     const history = createHistory();
-    const store = createStore(history,{routerReducer,...reducer});
+    const store = createStore(history,{routerReducer,system:systemReducer,...reducer});
     Frame.history = history;
     Frame.store = store;
     // Router init
     Frame.Router = bindFunc(Router,store.dispatch);
+
+    // init tool
+    Frame.ToolComp = ToolComp.init();
+
     // 渲染节点
     render(<App 
             store={store}

@@ -1,11 +1,10 @@
 import React from 'react';
-
-class Nofound extends React.Component {
+class Index extends React.Component {
     render() {
       return (<div className="center">
-                <h1>首页内容区域</h1>
+                <h1>欢迎进入首页</h1>
             </div>)
     }
   }
 
-export default Nofound;
+export default Index;

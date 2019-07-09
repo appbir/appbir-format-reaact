@@ -4,9 +4,12 @@
  */
 import React, {Component} from 'react';
 import Layout from 'appbir-layout';
+import {connect} from './connect';
 const noop = () => null;
 class PageLayout extends Component {
-	// TODO 后续考虑扩展 外部通过方法设置 内部状态 改变布局
+	constructor(props){
+		super(props);
+	}
 	render(){
 		// layou 排序规则
 		// PARTS.CONTENT,PARTS.HEADER,PARTS.LEFT,PARTS.RIGHT,PARTS.BOTTOM,PARTS.CONTENT_HEADER];
@@ -16,11 +19,9 @@ class PageLayout extends Component {
 		let Right = nodes[2] || noop;
 		let BOTTOM = nodes[3] || noop;
 		let CONTENT_HEADER = nodes[4] || noop;
-
 		let config = this.props.config;
-
 		return (
-			<div className="appbir-PageLayout-content">
+			<div className="appbir-project-layout">
 				<Layout {...config}>
 					{this.props.children}
 					<Header/>
@@ -32,6 +33,8 @@ class PageLayout extends Component {
 			</div>);
 	}
 }
-
-
-export default PageLayout;
+const stateToProps = (mState,state) => {
+	return {config:state.system.layout};
+}
+const dispatchToProps = dispatch => ({dispatch});
+export default connect(stateToProps,dispatchToProps)(PageLayout);
