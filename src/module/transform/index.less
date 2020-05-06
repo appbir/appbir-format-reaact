@@ -1,0 +1,155 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes rotate3d {
+    from {
+        transform: rotate3d(0)
+    }
+
+    to {
+        transform: rotate3d(1,2,0,60deg)
+    }
+}
+
+.transform-page{
+    display: flex;
+    width: 100%;
+    height: 100%;
+   .show-view{
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .page-config{
+        background: green;
+        width: 100%;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .code{
+        width: 100%;
+        min-height: 100px;
+        background: green;
+        color: white;
+        margin:0;
+    }
+    .view{
+        flex: 1;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .example-container{
+            width: 320px;
+            height: 320px;
+            position: relative;
+            .example-element{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                background: #e4f0f5;
+                color: #696969;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+            }
+            .crosshair{
+                width: 24px;
+                height: 24px;
+                // opacity: 0;
+                position: absolute;
+            }
+        }
+        .static-element{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border: dotted 2px green;
+        }
+      
+    }
+   }
+  
+   .config-panel{
+    width: 755px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    background: aliceblue;
+    .property-item{
+        width: 100%;
+        .property-title{
+            padding: 5px;
+            font-weight: bold;
+            color: green;
+            border-bottom: 1px solid green;
+            margin-bottom: 5px;
+            display: flex;
+            .title{
+
+            }
+            .help{
+                padding-left: 10px;
+                font-size: 10px;
+                line-height: 24px;
+                color: #3c3e40;
+            }
+            .demo-actions{
+                flex: 1;
+                text-align: right;
+                font-size: 10px;
+                line-height: 24px;
+                color: blueviolet;
+                padding-right: 20px;
+            }
+        }
+        .property-content{
+            display: flex;
+            .arguments-select{
+                width: 100px;
+            }
+            .input-ele{
+                width:50px;
+            }
+            .property-condition{
+                display: flex;
+                width: 100px;
+            }
+            .property-config{
+                display: flex;
+                // flex:1;
+            }
+            // 每一个元素项目
+            .unit-item{
+                .argument-type{
+                    width: 80px;
+                }
+                .input-value{
+                    width:77px;
+                }
+                .unit-choice{
+                    width: 57px;
+                }
+            }
+        }
+    }
+   }
+ 
+}

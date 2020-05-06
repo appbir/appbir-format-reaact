@@ -81,13 +81,16 @@ const config = {
         }),
         // 拷贝本地静态数据
         new CopyWebpackPlugin([
-            {from:'./favicon.ico',to:'./favicon.ico'}], 
+            {from:'./favicon.ico',to:'./favicon.ico'}, 
+            {from:'./src/assert',to:'./assert'}],
             {ignore: [],copyUnmodified: true,debug: 'debug'})
     ],
     resolve: {
+        extensions: ['.js', '.jsx', '.json'], // 这几个后缀名的文件后缀可以省略不写
         alias: {
             "frame":path.resolve(__dirname, './src/frame/frame.js'),
-            "@":path.resolve(__dirname, './src/module/')
+            "@":path.resolve(__dirname, './src/module/'),
+            'appbir':path.resolve(__dirname, './src/components/main'),
         }
     }  
 };

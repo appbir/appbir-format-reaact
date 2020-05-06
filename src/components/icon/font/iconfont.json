@@ -1,0 +1,23 @@
+{
+  "id": "1799281",
+  "name": "appbir",
+  "font_family": "i-font",
+  "css_prefix_text": "i-",
+  "description": "个人使用",
+  "glyphs": [
+    {
+      "icon_id": "14470412",
+      "name": "tips",
+      "font_class": "tips",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14469688",
+      "name": "help",
+      "font_class": "help",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}
